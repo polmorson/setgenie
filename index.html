@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetGenie - AI DJ Set Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(3, 86, 133, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 194, 203, 0.8);
+        }
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #00C2CB;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #035685;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Your AI DJ Set</h2>
+        <form action="/generate" method="POST">
+            <label for="bpm">BPM Range:</label>
+            <select id="bpm" name="bpm" required>
+                <option value="110-120">110-120</option>
+                <option value="120-130">120-130</option>
+                <option value="130-140">130-140</option>
+                <option value="140+">140+</option>
+                <option value="130-150">130-150</option>
+            </select>
+            
+            <label for="genre">Genre:</label>
+            <select id="genre" name="genre" required>
+                <option value="techno">Techno</option>
+                <option value="tech house">Tech House</option>
+                <option value="house">House</option>
+                <option value="edm">EDM</option>
+                <option value="drum and bass">Drum & Bass</option>
+            </select>
+            
+            <label for="venue">Venue Vibe:</label>
+            <select id="venue" name="venue" required>
+                <option value="summer">Summer</option>
+                <option value="warehouse">Warehouse</option>
+                <option value="festival">Festival</option>
+                <option value="lounge">Lounge</option>
+                <option value="afterparty">Afterparty</option>
+                <option value="sunset">Sunset</option>
+                <option value="sunrise">Sunrise</option>
+                <option value="rooftop">Rooftop</option>
+                <option value="basement">Basement</option>
+                <option value="club main room">Club Main Room</option>
+                <option value="vip">VIP/Exclusive</option>
+                <option value="futuristic">Futuristic</option>
+                <option value="retro">Retro/Throwback</option>
+                <option value="psychedelic">Psychedelic</option>
+                <option value="pres">Pres</option>
+            </select>
+            
+            <label for="artist">Artist Vibe:</label>
+            <input type="text" id="artist" name="artist" placeholder="e.g. Adam Beyer, Fisher" required>
+            
+            <label for="set_type">Type of Set:</label>
+            <select id="set_type" name="set_type" required>
+                <option value="opening">Opening</option>
+                <option value="mid">Mid</option>
+                <option value="closing">Closing</option>
+            </select>
+            
+            <label for="length">Set Length (minutes):</label>
+            <input type="number" id="length" name="length" min="10" max="300" required>
+            
+            <button type="submit">Generate My Set</button>
+        </form>
+    </div>
+</body>
+</html>
